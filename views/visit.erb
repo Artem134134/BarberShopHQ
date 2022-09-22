@@ -9,7 +9,7 @@
 
 <h2>Прихмахерская</h2>
 
-<p>На этой странице вы можете записвться к нам в Barshope</p>
+<p>На этой странице вы можете записаться к нам в Barshope</p>
 
 <% @barbers.each do |barber| %>
   <p>
@@ -18,44 +18,42 @@
 <% end %>
 
  
-
-
-
-
-
 <form action="/visit" method="POST">
 
 
 
   <div class="mb-3">
     <label>Ваше имя</label>
-    <input name="username" type="text" class="form-control ccc" placeholder="Введите ваше имя" value="<%= @username %>">
+    <input name="client[name]" type="text" class="form-control ccc" placeholder="Введите ваше имя" value="">
   </div>
 
  <div class="mb-3">
     <label>Ваш телефон</label>
-    <input name="phone" type="text" class="form-control ccc" placeholder="Введите ваш телефон" value="<%= @phone %>">
+    <input name="client[phone]" type="text" class="form-control ccc" placeholder="Введите ваш телефон" value="">
   </div>
 
   <div class="mb-3">
     <label>Когда вас ждать</label>
-    <input name="datetime" type="text" class="form-control ccc" placeholder="Введите дату и время" value="<%= @datetime %>">
+    <input name="client[datestamp]"
+      type="text" class="form-control ccc"
+    placeholder="Введите дату и время" value="">
     <label></label>
   </div>
 
-  <select id="aaa" class="form-select " name="barmans" aria-label="Default select example">
+<!--  <select id="aaa" class="form-select " name="barmans" aria-label="Default select example">
   <option selected>Выберите прихмахера</option>
   <option value="Walter White">Walter White</option>
   <option value="Jessie Pinkman">Jessie Pinkman</option>
   <option value="Gus Fring">Gus Fring</option>
   <option value="Mike Ehrmantaut">Mike Ehrmantaut</option>
   <option value="Kirill Artamonov">Kirill Artamonov</option>
-</select>
+</select>-->
    
   <div class="mb-3">
 <label>Цвет краски:</label>
-<select id="color" name="color">
-<option value="#7bd148">Green</option>
+<select id="params[color]" name="color">
+    <option value="#none">None</option>
+    <option value="#7bd148">Green</option>  
     <option value="#5484ed">Bold blue</option>
     <option value="#a4bdfc">Blue</option>
     <option value="#46d6db">Turquoise</option>
