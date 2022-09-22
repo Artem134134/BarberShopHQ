@@ -1,5 +1,27 @@
-<h2>Записаться</h2>
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>book a haircut</title>
+
+  </head>
+
+  <body>
+
+<h2>Прихмахерская</h2>
+
 <p>На этой странице вы можете записвться к нам в Barshope</p>
+
+<% @barbers.each do |barber| %>
+  <p>
+    <%=barber.name %>
+  </p>
+<% end %>
+
+ 
+
+
+
+
 
 <form action="/visit" method="POST">
 
@@ -61,3 +83,6 @@
   });
   //It's right for jQuery !
   </script>
+
+   </body>
+</html>
