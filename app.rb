@@ -4,28 +4,27 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'sinatra/activerecord'
 
-# set :database, "sqlite3:barbershop.db"
-set :database, { adapter: 'sqlite3', database: 'barbershop.db' }
+# database connection
+set :database, {adapter: "sqlite3", database: "HQ.sqlite"}
 
-class Client < ActiveRecord::Base 
+class Client < ActiveRecord::Base
 end
 
 class Barber < ActiveRecord::Base
 end
 
 before do
-	@barbers = Barber.all
+  @barbers = Barber.all
 end
 
 get '/' do
-#	@barbers = Barber.order "created_at DESC"
+	@barbers = Barber.order "created_at DESC"    # all or order "created_at DESC"
 	erb :index
 end
 
 get '/visit' do
-	erb :visit
+  erb :visit
 end
-
 
 post '/visit' do 
 
@@ -35,5 +34,15 @@ post '/visit' do
 @barmen  = params[:barmen]
 @color    = params[:color]
 
-  erb "<h2>Спасибо, вы записались!</h2>"	
-end	
+#name, phone, datestamp, barber, color 
+
+c = Client.new
+c.name = @username
+c.phone = @phone
+c.datestamp = @datetime
+c.barber = @barber
+c.color = @color
+c.save
+
+  erb "<h2>Спасибо, вы записались!</h2>"		
+end
