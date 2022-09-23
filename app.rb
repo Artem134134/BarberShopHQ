@@ -15,6 +15,7 @@ end
 
 before do
   @barbers = Barber.all
+  @clients =  Client.all
 end
 
 get '/' do

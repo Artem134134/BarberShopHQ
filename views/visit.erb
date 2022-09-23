@@ -9,18 +9,21 @@
 
 <h2>Прихмахерская</h2>
 
-<p>На этой странице вы можете записаться к нам в Barshope</p>
+<p>На этой странице вы можете записаться к нам в BarbershopeHQ</p>
 
-<% @barbers.each do |barber| %>
-  <p>
-    <%=barber.name %>
-  </p>
-<% end %>
-
- 
 <form action="/visit" method="POST">
 
+  <br />
+  <br />
+<p>Наши прихмахеры:</p>
+<select class="form-select" name="client[barber]"  aria-label="Default select example"  >
+   <% @clients.each do |client| %>
+  <option selected ><%= client.barber %></option>
 
+<% end %>
+</select>  
+ <br />
+ <br />
 
   <div class="mb-3">
     <label>Ваше имя</label>
@@ -40,31 +43,23 @@
     <label></label>
   </div>
 
-<!--  <select id="aaa" class="form-select " name="barmans" aria-label="Default select example">
-  <option selected>Выберите прихмахера</option>
-  <option value="Walter White">Walter White</option>
-  <option value="Jessie Pinkman">Jessie Pinkman</option>
-  <option value="Gus Fring">Gus Fring</option>
-  <option value="Mike Ehrmantaut">Mike Ehrmantaut</option>
-  <option value="Kirill Artamonov">Kirill Artamonov</option>
-</select>-->
    
   <div class="mb-3">
 <label>Цвет краски:</label>
-<select id="params[color]" name="color">
-    <option value="#none">None</option>
-    <option value="#7bd148">Green</option>  
-    <option value="#5484ed">Bold blue</option>
-    <option value="#a4bdfc">Blue</option>
-    <option value="#46d6db">Turquoise</option>
-    <option value="#7ae7bf">Light green</option>
-    <option value="#51b749">Bold green</option>
-    <option value="#fbd75b">Yellow</option>
-    <option value="#ffb878">Orange</option>
-    <option value="#ff887c">Red</option>
-    <option value="#dc2127">Bold red</option>
-    <option value="#dbadff">Purple</option>
-    <option value="#e1e1e1">Gray</option>   
+<select id="color" name="client[color]">
+    <option value="none">None</option>
+    <option value="green">Green</option>  
+    <option value="blue">Blue</option>
+    <option value="turquoise">Turquoise</option>
+    <option value="yellow">Yellow</option>
+    <option value="orange">Orange</option>
+    <option value="red">Red</option>
+    <option value="purple">Purple</option>
+    <option value="gray">Gray</option>
+    <option value="chartreuse">Chartreuse</option>
+      
+    <option value="black ">Black</option>
+      
   </select>
 </div>
 
