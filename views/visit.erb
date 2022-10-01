@@ -16,9 +16,12 @@
   <br />
   <br />
 <p>Наши прихмахеры:</p>
-<select class="form-select" name="client[barber]"  aria-label="Default select example"  >
-   <% @clients.each do |client| %>
-  <option selected ><%= client.barber %></option>
+<select class="form-select" 
+ aria-label="Default select example" >
+
+ <% @barbers.each  do |barber| %>
+ <option selected ><%= barber.name %></option>
+  
 
 <% end %>
 </select>  
@@ -27,19 +30,19 @@
 
   <div class="mb-3">
     <label>Ваше имя</label>
-    <input name="client[name]" type="text" class="form-control ccc" placeholder="Введите ваше имя" value="">
+    <input name="client[name]" type="text" class="form-control ccc" placeholder="Введите ваше имя" value="<%= @c.name %>" >
   </div>
 
  <div class="mb-3">
     <label>Ваш телефон</label>
-    <input name="client[phone]" type="text" class="form-control ccc" placeholder="Введите ваш телефон" value="">
+    <input name="client[phone]" type="text" class="form-control ccc" placeholder="Введите ваш телефон" value="<%= @c.phone %>" >
   </div>
 
   <div class="mb-3">
     <label>Когда вас ждать</label>
     <input name="client[datestamp]"
       type="text" class="form-control ccc"
-    placeholder="Введите дату и время" value="">
+    placeholder="Введите дату и время" value="<%= @c.datestamp %>" >
     <label></label>
   </div>
 
@@ -56,8 +59,7 @@
     <option value="red">Red</option>
     <option value="purple">Purple</option>
     <option value="gray">Gray</option>
-    <option value="chartreuse">Chartreuse</option>
-      
+    <option value="chartreuse">Chartreuse</option>    
     <option value="black ">Black</option>
       
   </select>

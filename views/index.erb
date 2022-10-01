@@ -10,7 +10,7 @@
 <h2>Список наших прихмахеров</h2>
 <% @barbers.each do |barber| %>
 	<p>
-		<%= barber.name %>
+		<a href="/barber/<%= barber.id %>"> <%= barber.name %></a>
 	</p>
 <% end %>
 

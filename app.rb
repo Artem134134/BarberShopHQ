@@ -8,14 +8,15 @@ require 'sinatra/activerecord'
 set :database, {adapter: "sqlite3", database: "HQ.sqlite"}
 
 class Client < ActiveRecord::Base
-  validates :name, presence: true
-  validates :phone, presence: true
+  validates :name, presence: true, length:{ minimum: 3}
+  validates :phone, presence: true, length:{ minimum: 5}
   validates :datestamp, presence: true
-  validates :barber, presence: true
+ 
   validates :color, presence: true
 end
 
 class Barber < ActiveRecord::Base
+  validates :name, presence: true, length:{ minimum: 3}
 end
 
 before do
@@ -29,17 +30,19 @@ get '/' do
 end
 
 get '/visit' do
+  @c = Client.new
   erb :visit
 end
 
 post '/visit' do 
 
   # name, phone, datestamp, barber, color from params
-  c = Client.new params[:client]
-  if c.save
+  @c = Client.new params[:client]
+ 
+  if @c.save 
       erb "<h2>Спасибо, вы записались!</h2>"		
   else
-    @error = c.errors.full_messages.first
+    @error = @c.errors.full_messages.first
     erb :visit
   end
 end
