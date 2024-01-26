@@ -20,12 +20,11 @@
   <br />
 <p>Наши прихмахеры:</p>
 <select class="form-select" 
- aria-label="Default select example" >
+ aria-label="Default select example" name="client[barber]">
 
  <% @barbers.each  do |barber| %>
  <option selected ><%= barber.name %></option>
   
-
 <% end %>
 </select>  
  <br />
