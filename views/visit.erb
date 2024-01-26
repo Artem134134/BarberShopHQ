@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+   <script src="jquery.datetimepicker.full.min.js"></script>
+  <link rel="stylesheet" href="jquery.datetimepicker.min.css">
+
   <title>book a haircut</title>
 
   </head>
-
   <body>
 
 <h2>Прихмахерская</h2>
@@ -40,8 +43,7 @@
 
   <div class="mb-3">
     <label>Когда вас ждать</label>
-    <input name="client[datestamp]"
-      type="text" class="form-control ccc"
+    <input name="client[datestamp]" id="datetimepicker" type="text" class="form-control ccc"
     placeholder="Введите дату и время" value="<%= @c.datestamp %>" >
     <label></label>
   </div>
@@ -75,6 +77,7 @@
     $('#color').simplecolorpicker();
     $('.ccc').css('background-color','#add8e6');  
     $('#aaa').css('background-color','#b0e0e6');
+    $('#datetimepicker').datetimepicker();
   });
   //It's right for jQuery !
   </script>
