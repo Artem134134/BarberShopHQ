@@ -11,7 +11,6 @@ class Client < ActiveRecord::Base
   validates :name, presence: true, length:{ minimum: 3}
   validates :phone, presence: true, length:{ minimum: 5}
   validates :datestamp, presence: true
- 
   validates :color, presence: true
 end
 
@@ -25,7 +24,6 @@ before do
 end
 
 get '/' do
-	@barbers = Barber.order "created_at DESC"    # all or order "created_at DESC"
 	erb :index
 end
 
