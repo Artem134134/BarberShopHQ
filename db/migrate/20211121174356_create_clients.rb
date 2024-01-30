@@ -10,11 +10,5 @@ class CreateClients < ActiveRecord::Migration[6.1]
 
   		t.timestamps
   	end
-
- # Client.create :barber => 'Jessie Pinkman'
- #  Client.create :barber => 'Walter White'
- #  Client.create :barber => 'Gus Fring'
- #  Client.create :barber => 'Mike Ehrmantaut'
- #  Client.create :barber => 'Kirill Artamonov'	
-    end
+  end
 end

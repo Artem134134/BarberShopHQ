@@ -1,16 +1,16 @@
 class CreateBarbers < ActiveRecord::Migration[6.1]
   def change
   	  	create_table :barbers do |t|
-  		t.text :name
+      		t.text :name
 
-  		t.timestamps
-  	end	
+      		t.timestamps
+        end	
   	
-	Barber.create :name => 'Jessie Pinkman'
-	Barber.create :name => 'Gus Fring'
-  Barber.create :name => 'Mike Ehrmantaut'
-  Barber.create :name => 'Kirill Artamonov'
-  Barber.create :name => 'Walter White'
+  	Barber.create :name => 'Jessie Pinkman'
+  	Barber.create :name => 'Gus Fring'
+    Barber.create :name => 'Mike Ehrmantaut'
+    Barber.create :name => 'Kirill Artamonov'
+    Barber.create :name => 'Walter White'
   
     end
 end
