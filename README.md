@@ -14,15 +14,18 @@ ____
 **PLATFORMS x86_64-linux**
 + Ruby 
   + Sinatra 
-  + sinatra-reloader 1.0
+  + sinatra-reloader 
   + activerecord
   + sinatra-activerecord
   + rake
   + rackup 
   + tux
-  + sqlite3 1.7.0
+  + sqlite3 
 + js
-  + jquery-1.9.1
+  + jquery
+    + plugins:
+      + simple-color-picker
+      + data-time-picker
 + HTML
 + CSS
   + bootstrap 5 
