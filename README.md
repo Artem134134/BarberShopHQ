@@ -48,11 +48,11 @@ Then open [http://localhost:4567/](http://localhost:4567/)
 
 ____
 ### Screen shot:
-![]()
-![]()
-![]()
-![]()
-![]()
+![main page](https://github.com/Artem134134/BarberShopHQ/blob/main/public/screenshot/1.png)
+![sign up page](https://github.com/Artem134134/BarberShopHQ/blob/main/public/screenshot/2.png)
+![signed up](https://github.com/Artem134134/BarberShopHQ/blob/main/public/screenshot/3.png)
+![booking page](https://github.com/Artem134134/BarberShopHQ/blob/main/public/screenshot/4.png)
+![client page](https://github.com/Artem134134/BarberShopHQ/blob/main/public/screenshot/5.png)
 
 
 ***Cleaned version of*** [ruby-sinatra-bootstrap](https://github.com/bootstrap-ruby/sinatra-bootstrap)  
